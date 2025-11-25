@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Payout - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="bi bi-wallet2"></i> Payout Manager</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="payout-queue.html"><i class="bi bi-list-check"></i> Payout Queue</a></li>
+            <li><a href="execution-queue.html"><i class="bi bi-play-circle"></i> Execution Queue</a></li>
+            <li><a href="manual-payout.html" class="active"><i class="bi bi-plus-circle"></i> Manual Payout</a></li>
+            <li><a href="bulk-batches.html"><i class="bi bi-stack"></i> Bulk Batches</a></li>
+            <li><a href="reconciliation.html"><i class="bi bi-arrow-repeat"></i> Reconciliation</a></li>
+            <li><a href="logs.html"><i class="bi bi-file-text"></i> Logs</a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> System Settings</a></li>
+            <li><a href="monitoring.html"><i class="bi bi-graph-up"></i> Monitoring & Alerts</a></li>
+            <li><a href="../utility/profile.html"><i class="bi bi-person"></i> Profile</a></li>
+            <li><a href="../utility/logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Top Navbar -->
+    <nav class="top-navbar" id="topNavbar">
+        <button class="navbar-toggle" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <h5 class="mb-0">Manual Payout</h5>
+        <div class="navbar-user">
+            <span class="text-muted">Admin User</span>
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-person-circle fs-4"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="container-fluid">
+            <h2 class="mb-4">Create Manual Payout</h2>
+
+            <form class="needs-validation" novalidate>
+                <!-- Merchant Information -->
+                <div class="form-section">
+                    <h5>Merchant Information</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="merchantId" class="form-label">Merchant ID <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="merchantId" placeholder="MER-ABC-001" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid merchant ID.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="merchantName" class="form-label">Merchant Name</label>
+                            <input type="text" class="form-control" id="merchantName" placeholder="Merchant ABC" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beneficiary Information -->
+                <div class="form-section">
+                    <h5>Beneficiary Information</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="beneficiaryName" class="form-label">Beneficiary Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="beneficiaryName" placeholder="John Doe" required>
+                            <div class="invalid-feedback">
+                                Please provide beneficiary name.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="accountType" class="form-label">Account Type <span class="text-danger">*</span></label>
+                            <select class="form-select" id="accountType" required>
+                                <option value="">Select account type</option>
+                                <option value="upi">UPI</option>
+                                <option value="bank">Bank Account</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select account type.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="upiId" class="form-label">UPI ID</label>
+                            <input type="text" class="form-control" id="upiId" placeholder="john@paytm">
+                            <small class="text-muted">Required if account type is UPI</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="accountNumber" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="accountNumber" placeholder="1234567890">
+                            <small class="text-muted">Required if account type is Bank</small>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="ifscCode" class="form-label">IFSC Code</label>
+                            <input type="text" class="form-control" id="ifscCode" placeholder="SBIN0001234">
+                            <small class="text-muted">Required if account type is Bank</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+91 9876543210">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="john.doe@example.com">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payout Details -->
+                <div class="form-section">
+                    <h5>Payout Details</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="amount" class="form-label">Amount (₹) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="amount" placeholder="0.00" step="0.01" min="0.01" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid amount.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="purpose" class="form-label">Purpose <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="purpose" placeholder="Salary Payment" required>
+                            <div class="invalid-feedback">
+                                Please provide payout purpose.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="remarks" class="form-label">Remarks</label>
+                            <textarea class="form-control" id="remarks" rows="3" placeholder="Additional notes or remarks"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="d-flex justify-content-end gap-2 mb-4">
+                    <a href="index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </a>
+                    <button type="submit" class="btn btn-primary btn-action" data-action="Create Payout">
+                        <i class="bi bi-check-circle"></i> Create Payout
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

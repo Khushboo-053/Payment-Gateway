@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring & Alerts - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="bi bi-wallet2"></i> Payout Manager</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="payout-queue.html"><i class="bi bi-list-check"></i> Payout Queue</a></li>
+            <li><a href="execution-queue.html"><i class="bi bi-play-circle"></i> Execution Queue</a></li>
+            <li><a href="manual-payout.html"><i class="bi bi-plus-circle"></i> Manual Payout</a></li>
+            <li><a href="bulk-batches.html"><i class="bi bi-stack"></i> Bulk Batches</a></li>
+            <li><a href="reconciliation.html"><i class="bi bi-arrow-repeat"></i> Reconciliation</a></li>
+            <li><a href="logs.html"><i class="bi bi-file-text"></i> Logs</a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> System Settings</a></li>
+            <li><a href="monitoring.html" class="active"><i class="bi bi-graph-up"></i> Monitoring & Alerts</a></li>
+            <li><a href="../utility/profile.html"><i class="bi bi-person"></i> Profile</a></li>
+            <li><a href="../utility/logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Top Navbar -->
+    <nav class="top-navbar" id="topNavbar">
+        <button class="navbar-toggle" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <h5 class="mb-0">Monitoring & Alerts</h5>
+        <div class="navbar-user">
+            <span class="text-muted">Admin User</span>
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-person-circle fs-4"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="container-fluid">
+            <h2 class="mb-4">Monitoring & Alerts</h2>
+
+            <!-- System Health Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">System Status</h6>
+                            <h3 class="text-success mb-0">
+                                <i class="bi bi-check-circle"></i> Healthy
+                            </h3>
+                            <small class="text-muted">All systems operational</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">API Response Time</h6>
+                            <h3 class="text-primary mb-0">145ms</h3>
+                            <small class="text-success">Within normal range</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Active Connections</h6>
+                            <h3 class="text-info mb-0">1,234</h3>
+                            <small class="text-muted">Current active sessions</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Error Rate</h6>
+                            <h3 class="text-warning mb-0">0.2%</h3>
+                            <small class="text-success">Below threshold</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Placeholder -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Transaction Volume</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+                                Transaction Volume Chart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Success Rate</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <i class="bi bi-pie-chart me-2"></i>
+                                Success Rate Chart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Response Time Trend</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <i class="bi bi-speedometer2 me-2"></i>
+                                Response Time Trend Chart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Error Distribution</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <i class="bi bi-bar-chart me-2"></i>
+                                Error Distribution Chart
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Settings -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Alert Settings</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>High Failure Rate Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify when failure rate exceeds 5%</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="failureAlert" checked>
+                                    <label class="form-check-label" for="failureAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>Low Balance Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify when balance falls below threshold</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="balanceAlert" checked>
+                                    <label class="form-check-label" for="balanceAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>Slow Response Time Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify when response time exceeds 500ms</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="responseAlert" checked>
+                                    <label class="form-check-label" for="responseAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>Reconciliation Mismatch Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify on reconciliation discrepancies</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="reconAlert" checked>
+                                    <label class="form-check-label" for="reconAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>Batch Processing Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify on batch processing errors</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="batchAlert">
+                                    <label class="form-check-label" for="batchAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>System Downtime Alert</strong>
+                                    <p class="text-muted mb-0 small">Notify on system unavailability</p>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="downtimeAlert" checked>
+                                    <label class="form-check-label" for="downtimeAlert"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-save"></i> Save Alert Settings
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconciliation - Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="bi bi-wallet2"></i> Payout Manager</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="payout-queue.html"><i class="bi bi-list-check"></i> Payout Queue</a></li>
+            <li><a href="execution-queue.html"><i class="bi bi-play-circle"></i> Execution Queue</a></li>
+            <li><a href="manual-payout.html"><i class="bi bi-plus-circle"></i> Manual Payout</a></li>
+            <li><a href="bulk-batches.html"><i class="bi bi-stack"></i> Bulk Batches</a></li>
+            <li><a href="reconciliation.html" class="active"><i class="bi bi-arrow-repeat"></i> Reconciliation</a></li>
+            <li><a href="logs.html"><i class="bi bi-file-text"></i> Logs</a></li>
+            <li><a href="settings.html"><i class="bi bi-gear"></i> System Settings</a></li>
+            <li><a href="monitoring.html"><i class="bi bi-graph-up"></i> Monitoring & Alerts</a></li>
+            <li><a href="../utility/profile.html"><i class="bi bi-person"></i> Profile</a></li>
+            <li><a href="../utility/logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Top Navbar -->
+    <nav class="top-navbar" id="topNavbar">
+        <button class="navbar-toggle" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <h5 class="mb-0">Reconciliation Dashboard</h5>
+        <div class="navbar-user">
+            <span class="text-muted">Admin User</span>
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-person-circle fs-4"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="container-fluid">
+            <h2 class="mb-4">Reconciliation Dashboard</h2>
+
+            <!-- File Upload Section -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Upload Bank Statement</h5>
+                </div>
+                <div class="card-body">
+                    <div class="file-upload-box">
+                        <i class="bi bi-cloud-upload fs-1 text-primary mb-3"></i>
+                        <h5>Drag & drop your statement file here</h5>
+                        <p class="text-muted">or</p>
+                        <input type="file" class="d-none" id="statementFile" accept=".csv,.xlsx,.xls">
+                        <label for="statementFile" class="btn btn-primary">
+                            <i class="bi bi-upload"></i> Browse Files
+                        </label>
+                        <p class="text-muted mt-3 small">Supported formats: CSV, XLSX, XLS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Match Percentage Card -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Match Percentage</h6>
+                            <h2 class="text-primary mb-0">98.5%</h2>
+                            <small class="text-success"><i class="bi bi-arrow-up"></i> 2.3% improvement</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Matched Transactions</h6>
+                            <h2 class="text-success mb-0">1,485</h2>
+                            <small class="text-muted">out of 1,507 total</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-2">Unmatched Transactions</h6>
+                            <h2 class="text-danger mb-0">22</h2>
+                            <small class="text-warning">Requires attention</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reconciliation Table -->
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Reconciliation Details</h5>
+                    <div>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-filter"></i> Filter
+                        </button>
+                        <button class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-download"></i> Export
+                        </button>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Statement Line</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Matched Payout</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td>STMT-001</td>
+                                <td>2024-01-15</td>
+                                <td>₹15,000.00</td>
+                                <td><code>PO-2024-001234</code></td>
+                                <td><span class="badge badge-completed">Matched</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>STMT-002</td>
+                                <td>2024-01-15</td>
+                                <td>₹25,500.00</td>
+                                <td><code>PO-2024-001235</code></td>
+                                <td><span class="badge badge-completed">Matched</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td>STMT-003</td>
+                                <td>2024-01-15</td>
+                                <td>₹8,750.00</td>
+                                <td>-</td>
+                                <td><span class="badge badge-pending">Unmatched</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary btn-action" data-action="Override">
+                                        <i class="bi bi-arrow-repeat"></i> Override
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>STMT-004</td>
+                                <td>2024-01-15</td>
+                                <td>₹42,300.00</td>
+                                <td><code>PO-2024-001237</code></td>
+                                <td><span class="badge badge-completed">Matched</span></td>
+                                <td>-</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td>STMT-005</td>
+                                <td>2024-01-15</td>
+                                <td>₹19,200.00</td>
+                                <td>-</td>
+                                <td><span class="badge badge-pending">Unmatched</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary btn-action" data-action="Override">
+                                        <i class="bi bi-arrow-repeat"></i> Override
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>STMT-006</td>
+                                <td>2024-01-15</td>
+                                <td>₹12,500.00</td>
+                                <td><code>PO-2024-001200</code></td>
+                                <td><span class="badge badge-failed">Mismatch</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary btn-action" data-action="Override">
+                                        <i class="bi bi-arrow-repeat"></i> Override
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation" class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
