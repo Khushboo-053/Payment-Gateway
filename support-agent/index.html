@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Agent Dashboard - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="bi bi-wallet2"></i> Payout Manager</h4>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+            <li><a href="payout-history.html"><i class="bi bi-clock-history"></i> Payout History</a></li>
+            <li><a href="beneficiary-list.html"><i class="bi bi-people"></i> Beneficiary List</a></li>
+            <li><a href="logs.html"><i class="bi bi-file-text"></i> Logs</a></li>
+            <li><a href="../utility/profile.html"><i class="bi bi-person"></i> Profile</a></li>
+            <li><a href="../utility/logout.html"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Top Navbar -->
+    <nav class="top-navbar" id="topNavbar">
+        <button class="navbar-toggle" id="sidebarToggle">
+            <i class="bi bi-list"></i>
+        </button>
+        <h5 class="mb-0">Support Agent Dashboard</h5>
+        <div class="navbar-user">
+            <span class="text-muted">Support Agent</span>
+            <i class="bi bi-bell"></i>
+            <i class="bi bi-person-circle fs-4"></i>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="container-fluid">
+            <h2 class="mb-4">Dashboard Overview</h2>
+            
+            <!-- Stats Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Total Payouts Today</h6>
+                                    <h3 class="mb-0">₹2,45,680</h3>
+                                    <small class="text-success"><i class="bi bi-arrow-up"></i> 12% from yesterday</small>
+                                </div>
+                                <div class="stat-card-icon bg-primary">
+                                    <i class="bi bi-cash-stack"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Pending Approvals</h6>
+                                    <h3 class="mb-0">23</h3>
+                                    <small class="text-warning"><i class="bi bi-clock"></i> Awaiting review</small>
+                                </div>
+                                <div class="stat-card-icon bg-warning">
+                                    <i class="bi bi-hourglass-split"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Completed Today</h6>
+                                    <h3 class="mb-0">156</h3>
+                                    <small class="text-success"><i class="bi bi-check-circle"></i> Successful</small>
+                                </div>
+                                <div class="stat-card-icon bg-success">
+                                    <i class="bi bi-check2-all"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="text-muted mb-2">Failed Today</h6>
+                                    <h3 class="mb-0">5</h3>
+                                    <small class="text-danger"><i class="bi bi-exclamation-triangle"></i> Needs attention</small>
+                                </div>
+                                <div class="stat-card-icon bg-danger">
+                                    <i class="bi bi-x-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Placeholder -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Payout Trends (Read-Only)</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-placeholder">
+                                <i class="bi bi-graph-up-arrow me-2"></i>
+                                Chart Placeholder - Payout Analytics
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Recent Payout Activity</h5>
+                        </div>
+                        <div class="table-container">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Payout ID</th>
+                                        <th>Merchant</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Created</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>PO-2024-001234</code></td>
+                                        <td>Merchant ABC</td>
+                                        <td>₹15,000</td>
+                                        <td><span class="badge badge-pending">Pending</span></td>
+                                        <td>2024-01-15 10:30</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PO-2024-001235</code></td>
+                                        <td>Merchant XYZ</td>
+                                        <td>₹25,500</td>
+                                        <td><span class="badge badge-completed">Completed</span></td>
+                                        <td>2024-01-15 09:15</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>PO-2024-001236</code></td>
+                                        <td>Merchant DEF</td>
+                                        <td>₹8,750</td>
+                                        <td><span class="badge badge-failed">Failed</span></td>
+                                        <td>2024-01-15 08:45</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
